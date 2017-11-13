@@ -1,0 +1,9 @@
+c:\users\roman\documents\visual studio 2015\Projects\FiguresPaint\PaintForm\bin\Debug\PaintForm.exe.config
+c:\users\roman\documents\visual studio 2015\Projects\FiguresPaint\PaintForm\bin\Debug\PaintForm.exe
+c:\users\roman\documents\visual studio 2015\Projects\FiguresPaint\PaintForm\bin\Debug\PaintForm.pdb
+c:\users\roman\documents\visual studio 2015\Projects\FiguresPaint\PaintForm\obj\Debug\PaintForm.csprojResolveAssemblyReference.cache
+c:\users\roman\documents\visual studio 2015\Projects\FiguresPaint\PaintForm\obj\Debug\PaintForm.FormPaint.resources
+c:\users\roman\documents\visual studio 2015\Projects\FiguresPaint\PaintForm\obj\Debug\PaintForm.Properties.Resources.resources
+c:\users\roman\documents\visual studio 2015\Projects\FiguresPaint\PaintForm\obj\Debug\PaintForm.csproj.GenerateResource.Cache
+c:\users\roman\documents\visual studio 2015\Projects\FiguresPaint\PaintForm\obj\Debug\PaintForm.exe
+c:\users\roman\documents\visual studio 2015\Projects\FiguresPaint\PaintForm\obj\Debug\PaintForm.pdb
