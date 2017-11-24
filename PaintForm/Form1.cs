@@ -34,6 +34,12 @@ namespace PaintForm
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
+            if (rbDel.Checked)
+            {
+                pic.Delete(e.Location.X, e.Location.Y);
+                draw.FDraw(pic, ref bmp);
+                pictureBox1.Image = bmp;
+            }
             clicked = true;
             begin = e.Location;
             xdist = 0;
@@ -55,9 +61,9 @@ namespace PaintForm
             if (clicked)
             {
                 xdist = -begin.X + e.Location.X;
-                ydist = -begin.Y + e.Location.Y;
-                
+                ydist = -begin.Y + e.Location.Y;                
             }
+            
         }
     }
 }

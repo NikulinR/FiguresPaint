@@ -35,6 +35,7 @@
             this.rbOval = new System.Windows.Forms.RadioButton();
             this.rbRectangle = new System.Windows.Forms.RadioButton();
             this.rbLine = new System.Windows.Forms.RadioButton();
+            this.rbDel = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbFigure.SuspendLayout();
             this.SuspendLayout();
@@ -72,12 +73,13 @@
             // 
             // gbFigure
             // 
+            this.gbFigure.Controls.Add(this.rbDel);
             this.gbFigure.Controls.Add(this.rbOval);
             this.gbFigure.Controls.Add(this.rbRectangle);
             this.gbFigure.Controls.Add(this.rbLine);
             this.gbFigure.Location = new System.Drawing.Point(12, 70);
             this.gbFigure.Name = "gbFigure";
-            this.gbFigure.Size = new System.Drawing.Size(77, 99);
+            this.gbFigure.Size = new System.Drawing.Size(77, 108);
             this.gbFigure.TabIndex = 3;
             this.gbFigure.TabStop = false;
             this.gbFigure.Text = "Figure";
@@ -114,6 +116,16 @@
             this.rbLine.Text = "Line";
             this.rbLine.UseVisualStyleBackColor = true;
             // 
+            // rbDel
+            // 
+            this.rbDel.AutoSize = true;
+            this.rbDel.Location = new System.Drawing.Point(6, 88);
+            this.rbDel.Name = "rbDel";
+            this.rbDel.Size = new System.Drawing.Size(56, 17);
+            this.rbDel.TabIndex = 3;
+            this.rbDel.Text = "Delete";
+            this.rbDel.UseVisualStyleBackColor = true;
+            // 
             // FormPaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,6 +158,7 @@
         private System.Windows.Forms.RadioButton rbOval;
         private System.Windows.Forms.RadioButton rbRectangle;
         private System.Windows.Forms.RadioButton rbLine;
+        private System.Windows.Forms.RadioButton rbDel;
     }
 }
 

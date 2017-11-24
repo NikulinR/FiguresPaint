@@ -19,6 +19,7 @@ namespace BL
 
         public void FDraw(Picture pic,ref Bitmap bmp)
         {
+            Graphics.FromImage(bmp).Clear(Color.White);
             foreach (var item in pic.Figures)
             {
                 item.Draw(ref bmp);
