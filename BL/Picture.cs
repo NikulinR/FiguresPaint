@@ -8,5 +8,6 @@ namespace BL
 {
     public class Picture
     {
+        public List<Figure> Figures = new List<Figure>();
     }
 }

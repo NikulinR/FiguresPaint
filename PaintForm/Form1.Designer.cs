@@ -32,20 +32,22 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnForward = new System.Windows.Forms.Button();
             this.gbFigure = new System.Windows.Forms.GroupBox();
-            this.rbLine = new System.Windows.Forms.RadioButton();
-            this.rbRectangle = new System.Windows.Forms.RadioButton();
             this.rbOval = new System.Windows.Forms.RadioButton();
+            this.rbRectangle = new System.Windows.Forms.RadioButton();
+            this.rbLine = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbFigure.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
             this.pictureBox1.Location = new System.Drawing.Point(95, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(672, 495);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             // 
             // btnBack
             // 
@@ -77,16 +79,16 @@
             this.gbFigure.TabStop = false;
             this.gbFigure.Text = "Figure";
             // 
-            // rbLine
+            // rbOval
             // 
-            this.rbLine.AutoSize = true;
-            this.rbLine.Location = new System.Drawing.Point(6, 19);
-            this.rbLine.Name = "rbLine";
-            this.rbLine.Size = new System.Drawing.Size(45, 17);
-            this.rbLine.TabIndex = 0;
-            this.rbLine.TabStop = true;
-            this.rbLine.Text = "Line";
-            this.rbLine.UseVisualStyleBackColor = true;
+            this.rbOval.AutoSize = true;
+            this.rbOval.Location = new System.Drawing.Point(6, 65);
+            this.rbOval.Name = "rbOval";
+            this.rbOval.Size = new System.Drawing.Size(47, 17);
+            this.rbOval.TabIndex = 2;
+            this.rbOval.TabStop = true;
+            this.rbOval.Text = "Oval";
+            this.rbOval.UseVisualStyleBackColor = true;
             // 
             // rbRectangle
             // 
@@ -99,16 +101,16 @@
             this.rbRectangle.Text = "Rectangle";
             this.rbRectangle.UseVisualStyleBackColor = true;
             // 
-            // rbOval
+            // rbLine
             // 
-            this.rbOval.AutoSize = true;
-            this.rbOval.Location = new System.Drawing.Point(6, 65);
-            this.rbOval.Name = "rbOval";
-            this.rbOval.Size = new System.Drawing.Size(47, 17);
-            this.rbOval.TabIndex = 2;
-            this.rbOval.TabStop = true;
-            this.rbOval.Text = "Oval";
-            this.rbOval.UseVisualStyleBackColor = true;
+            this.rbLine.AutoSize = true;
+            this.rbLine.Location = new System.Drawing.Point(6, 19);
+            this.rbLine.Name = "rbLine";
+            this.rbLine.Size = new System.Drawing.Size(45, 17);
+            this.rbLine.TabIndex = 0;
+            this.rbLine.TabStop = true;
+            this.rbLine.Text = "Line";
+            this.rbLine.UseVisualStyleBackColor = true;
             // 
             // FormPaint
             // 

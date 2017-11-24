@@ -7,3 +7,5 @@ c:\users\roman\documents\visual studio 2015\Projects\FiguresPaint\PaintForm\obj\
 c:\users\roman\documents\visual studio 2015\Projects\FiguresPaint\PaintForm\obj\Debug\PaintForm.csproj.GenerateResource.Cache
 c:\users\roman\documents\visual studio 2015\Projects\FiguresPaint\PaintForm\obj\Debug\PaintForm.exe
 c:\users\roman\documents\visual studio 2015\Projects\FiguresPaint\PaintForm\obj\Debug\PaintForm.pdb
+C:\Users\Roman\Documents\Visual Studio 2015\Projects\FiguresPaint\PaintForm\bin\Debug\BL.dll
+C:\Users\Roman\Documents\Visual Studio 2015\Projects\FiguresPaint\PaintForm\bin\Debug\BL.pdb
