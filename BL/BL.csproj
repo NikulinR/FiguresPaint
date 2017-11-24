@@ -45,8 +45,9 @@
     <Compile Include="FDrawing.cs" />
     <Compile Include="Figure.cs" />
     <Compile Include="FigureFactory.cs" />
+    <Compile Include="OvalFactory.cs" />
     <Compile Include="Line.cs" />
-    <Compile Include="Oval.cs" />
+    <Compile Include="FOval.cs" />
     <Compile Include="Picture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FRectangle.cs" />

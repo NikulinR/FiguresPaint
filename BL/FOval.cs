@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace BL
 {
-    public class FRectangle:Figure
+    public class FOval:Figure
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -15,9 +15,9 @@ namespace BL
         public int Height { get; set; }
         public int Width { get; set; }
         public int LineWidth { get; set; }
-        
 
-        public FRectangle(int x, int y, Color color, int height, int width, int lineWidth)
+
+        public FOval(int x, int y, Color color, int height, int width, int lineWidth)
         {
             X = x;
             Y = y;
@@ -30,23 +30,23 @@ namespace BL
         public void Draw(ref Bitmap bmp)
         {
             Graphics g = Graphics.FromImage(bmp);
-            Rectangle rect= new Rectangle();
+            Rectangle rect = new Rectangle();
 
-            if (Width>0 && Height>0)
+            if (Width > 0 && Height > 0)
                 rect = new Rectangle(X, Y, Width, Height);
 
             if (Width < 0 && Height > 0)
                 rect = new Rectangle(X + Width, Y, -Width, Height);
 
             if (Width > 0 && Height < 0)
-                rect = new Rectangle(X, Y+Height, Width, -Height);
+                rect = new Rectangle(X, Y + Height, Width, -Height);
 
             if (Width < 0 && Height < 0)
-                rect = new Rectangle(X + Width, Y+Height, -Width, -Height);
+                rect = new Rectangle(X + Width, Y + Height, -Width, -Height);
 
             Pen myPen = new Pen(FColor, LineWidth);
-            
-            g.DrawRectangle(myPen, rect);
+
+            g.DrawEllipse(myPen, rect);
             g.Dispose();
         }
     }

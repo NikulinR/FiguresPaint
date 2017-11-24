@@ -16,14 +16,15 @@ namespace PaintForm
         {
             InitializeComponent();
             bmp = new Bitmap(pictureBox1.Size.Width, pictureBox1.Size.Height);
+            draw = new BL.FDrawing(bmp);
         }
 
-        BL.RectFactory RF= new BL.RectFactory();
+        BL.FigureFactory RF= new BL.RectFactory();
+        BL.FigureFactory OF = new BL.OvalFactory();
         BL.Picture pic = new BL.Picture();
-        
+        BL.FDrawing draw;
 
         Bitmap bmp;
-        Graphics g;
 
 
         bool clicked = false;
@@ -34,26 +35,28 @@ namespace PaintForm
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             clicked = true;
-            begin = Cursor.Position;
+            begin = e.Location;
             xdist = 0;
             ydist = 0;
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
-        {
-            BL.FDrawing draw = new BL.FDrawing(bmp);
+        {            
             clicked = false;
-            RF.CreateFigure(begin.X, begin.Y, Color.Black, xdist, ydist, 2,ref pic);
-            draw.FDraw(pic);
+            if(rbRectangle.Checked)
+                RF.CreateFigure(begin.X, begin.Y, Color.Black, ydist, xdist, 2,ref pic);
+            if(rbOval.Checked)
+                OF.CreateFigure(begin.X, begin.Y, Color.Black, ydist, xdist, 2, ref pic);
+            draw.FDraw(pic,ref bmp);
             pictureBox1.Image = bmp;
         }
-
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             if (clicked)
             {
-                xdist = begin.X + Cursor.Position.X;
-                ydist = begin.Y + Cursor.Position.Y;
+                xdist = -begin.X + e.Location.X;
+                ydist = -begin.Y + e.Location.Y;
+                
             }
         }
     }

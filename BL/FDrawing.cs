@@ -17,7 +17,7 @@ namespace BL
             this.bmp = bmp;
         }
 
-        public void FDraw(Picture pic)
+        public void FDraw(Picture pic,ref Bitmap bmp)
         {
             foreach (var item in pic.Figures)
             {

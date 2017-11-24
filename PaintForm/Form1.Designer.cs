@@ -41,6 +41,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
             this.pictureBox1.Location = new System.Drawing.Point(95, 12);
             this.pictureBox1.Name = "pictureBox1";
@@ -48,6 +49,8 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // btnBack
             // 
@@ -86,13 +89,13 @@
             this.rbOval.Name = "rbOval";
             this.rbOval.Size = new System.Drawing.Size(47, 17);
             this.rbOval.TabIndex = 2;
-            this.rbOval.TabStop = true;
             this.rbOval.Text = "Oval";
             this.rbOval.UseVisualStyleBackColor = true;
             // 
             // rbRectangle
             // 
             this.rbRectangle.AutoSize = true;
+            this.rbRectangle.Checked = true;
             this.rbRectangle.Location = new System.Drawing.Point(6, 42);
             this.rbRectangle.Name = "rbRectangle";
             this.rbRectangle.Size = new System.Drawing.Size(74, 17);
@@ -108,7 +111,6 @@
             this.rbLine.Name = "rbLine";
             this.rbLine.Size = new System.Drawing.Size(45, 17);
             this.rbLine.TabIndex = 0;
-            this.rbLine.TabStop = true;
             this.rbLine.Text = "Line";
             this.rbLine.UseVisualStyleBackColor = true;
             // 
@@ -116,15 +118,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 519);
+            this.ClientSize = new System.Drawing.Size(776, 511);
             this.Controls.Add(this.gbFigure);
             this.Controls.Add(this.btnForward);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.pictureBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1000, 1000);
+            this.MinimumSize = new System.Drawing.Size(792, 550);
             this.Name = "FormPaint";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "FiguresPaint";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbFigure.ResumeLayout(false);
             this.gbFigure.PerformLayout();
