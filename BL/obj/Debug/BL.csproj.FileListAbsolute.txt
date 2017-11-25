@@ -3,3 +3,8 @@ C:\Users\Roman\Documents\Visual Studio 2015\Projects\FiguresPaint\BL\bin\Debug\B
 C:\Users\Roman\Documents\Visual Studio 2015\Projects\FiguresPaint\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
 C:\Users\Roman\Documents\Visual Studio 2015\Projects\FiguresPaint\BL\obj\Debug\BL.dll
 C:\Users\Roman\Documents\Visual Studio 2015\Projects\FiguresPaint\BL\obj\Debug\BL.pdb
+D:\Proecty huekty and other huynya\FiguresPaint\BL\bin\Debug\BL.dll
+D:\Proecty huekty and other huynya\FiguresPaint\BL\bin\Debug\BL.pdb
+D:\Proecty huekty and other huynya\FiguresPaint\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+D:\Proecty huekty and other huynya\FiguresPaint\BL\obj\Debug\BL.dll
+D:\Proecty huekty and other huynya\FiguresPaint\BL\obj\Debug\BL.pdb

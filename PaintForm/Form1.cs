@@ -21,6 +21,7 @@ namespace PaintForm
 
         BL.FigureFactory RF= new BL.RectFactory();
         BL.FigureFactory OF = new BL.OvalFactory();
+        BL.FigureFactory LF = new BL.LineFactory();
         BL.Picture pic = new BL.Picture();
         BL.FDrawing draw;
 
@@ -49,10 +50,12 @@ namespace PaintForm
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {            
             clicked = false;
-            if(rbRectangle.Checked)
-                RF.CreateFigure(begin.X, begin.Y, Color.Black, ydist, xdist, 2,ref pic);
-            if(rbOval.Checked)
+            if (rbRectangle.Checked)
+                RF.CreateFigure(begin.X, begin.Y, Color.Black, ydist, xdist, 2, ref pic);
+            else if (rbOval.Checked)
                 OF.CreateFigure(begin.X, begin.Y, Color.Black, ydist, xdist, 2, ref pic);
+            else if (rbLine.Checked)
+                LF.CreateFigure(begin.X, begin.Y, Color.Black, ydist, xdist, 2, ref pic);
             draw.FDraw(pic,ref bmp);
             pictureBox1.Image = bmp;
         }
