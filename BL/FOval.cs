@@ -9,7 +9,7 @@ namespace BL
 {
     public class FOval:Figure
     {
-        kak rabotat c etoi huinei
+        
         public int X { get; set; }
         public int Y { get; set; }
         public Color FColor { get; set; }
