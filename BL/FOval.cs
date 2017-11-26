@@ -7,8 +7,10 @@ using System.Drawing;
 
 namespace BL
 {
+
     public class FOval:Figure
     {
+        
         public int X { get; set; }
         public int Y { get; set; }
         public Color FColor { get; set; }
