@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BL;
 
 namespace PaintForm
 {
@@ -17,13 +18,20 @@ namespace PaintForm
             InitializeComponent();
             bmp = new Bitmap(pictureBox1.Size.Width, pictureBox1.Size.Height);
             draw = new BL.FDrawing(bmp);
+            invoker.SetCommand(1, new StepCommand(pic));
+
         }
 
         BL.FigureFactory RF= new BL.RectFactory();
         BL.FigureFactory OF = new BL.OvalFactory();
         BL.FigureFactory LF = new BL.LineFactory();
-        BL.Picture pic = new BL.Picture();
+        
         BL.FDrawing draw;
+
+
+
+        Invoker invoker = new Invoker();    // мультипульт
+        Picture pic = new Picture();
 
         Bitmap bmp;
 
@@ -37,7 +45,8 @@ namespace PaintForm
         {
             if (rbDel.Checked)
             {
-                pic.Delete(e.Location.X, e.Location.Y);
+                invoker.SetCommand(0, new DeleteCommand(pic, e.Location.X, e.Location.Y));
+                invoker.PressButton(0);
                 draw.FDraw(pic, ref bmp);
                 pictureBox1.Image = bmp;
             }
@@ -71,14 +80,15 @@ namespace PaintForm
         
         private void btnBack_Click_1(object sender, EventArgs e)
         {
-            pic.Return();
+            invoker.SetCommand(1, new StepCommand(pic));
+            invoker.PressUndoButton();
             draw.FDraw(pic, ref bmp);
             pictureBox1.Image = bmp;
         }
 
         private void btnForward_Click_1(object sender, EventArgs e)
         {
-            pic.Forward();
+            invoker.PressButton(1);
             draw.FDraw(pic, ref bmp);
             pictureBox1.Image = bmp;
         }
