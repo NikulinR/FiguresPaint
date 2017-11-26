@@ -68,5 +68,19 @@ namespace PaintForm
             }
             
         }
+        
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            pic.Return();
+            draw.FDraw(pic, ref bmp);
+            pictureBox1.Image = bmp;
+        }
+
+        private void btnForward_Click_1(object sender, EventArgs e)
+        {
+            pic.Forward();
+            draw.FDraw(pic, ref bmp);
+            pictureBox1.Image = bmp;
+        }
     }
 }

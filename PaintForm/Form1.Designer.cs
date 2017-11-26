@@ -32,10 +32,10 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnForward = new System.Windows.Forms.Button();
             this.gbFigure = new System.Windows.Forms.GroupBox();
+            this.rbDel = new System.Windows.Forms.RadioButton();
             this.rbOval = new System.Windows.Forms.RadioButton();
             this.rbRectangle = new System.Windows.Forms.RadioButton();
             this.rbLine = new System.Windows.Forms.RadioButton();
-            this.rbDel = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbFigure.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +61,7 @@
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
             // 
             // btnForward
             // 
@@ -70,6 +71,7 @@
             this.btnForward.TabIndex = 2;
             this.btnForward.Text = "Forward";
             this.btnForward.UseVisualStyleBackColor = true;
+            this.btnForward.Click += new System.EventHandler(this.btnForward_Click_1);
             // 
             // gbFigure
             // 
@@ -83,6 +85,16 @@
             this.gbFigure.TabIndex = 3;
             this.gbFigure.TabStop = false;
             this.gbFigure.Text = "Figure";
+            // 
+            // rbDel
+            // 
+            this.rbDel.AutoSize = true;
+            this.rbDel.Location = new System.Drawing.Point(6, 88);
+            this.rbDel.Name = "rbDel";
+            this.rbDel.Size = new System.Drawing.Size(56, 17);
+            this.rbDel.TabIndex = 3;
+            this.rbDel.Text = "Delete";
+            this.rbDel.UseVisualStyleBackColor = true;
             // 
             // rbOval
             // 
@@ -115,16 +127,6 @@
             this.rbLine.TabIndex = 0;
             this.rbLine.Text = "Line";
             this.rbLine.UseVisualStyleBackColor = true;
-            // 
-            // rbDel
-            // 
-            this.rbDel.AutoSize = true;
-            this.rbDel.Location = new System.Drawing.Point(6, 88);
-            this.rbDel.Name = "rbDel";
-            this.rbDel.Size = new System.Drawing.Size(56, 17);
-            this.rbDel.TabIndex = 3;
-            this.rbDel.Text = "Delete";
-            this.rbDel.UseVisualStyleBackColor = true;
             // 
             // FormPaint
             // 
