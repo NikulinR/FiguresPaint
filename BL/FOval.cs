@@ -17,6 +17,7 @@ namespace BL
         public int Height { get; set; }
         public int Width { get; set; }
         public int LineWidth { get; set; }
+        public int Type { get; }
 
 
         public FOval(int x, int y, Color color, int height, int width, int lineWidth)
@@ -27,6 +28,7 @@ namespace BL
             Height = height;
             Width = width;
             LineWidth = lineWidth;
+            Type = 2;
         }
 
         public void Draw(ref Bitmap bmp)
@@ -50,6 +52,11 @@ namespace BL
 
             g.DrawEllipse(myPen, rect);
             g.Dispose();
+        }
+
+        public Figure Clone()
+        {
+            return new FOval(X, Y, FColor, Height, Width, LineWidth);
         }
     }
 }

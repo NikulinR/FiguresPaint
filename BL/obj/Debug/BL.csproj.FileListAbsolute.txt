@@ -8,3 +8,18 @@ D:\Proecty huekty and other huynya\FiguresPaint\BL\bin\Debug\BL.pdb
 D:\Proecty huekty and other huynya\FiguresPaint\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
 D:\Proecty huekty and other huynya\FiguresPaint\BL\obj\Debug\BL.dll
 D:\Proecty huekty and other huynya\FiguresPaint\BL\obj\Debug\BL.pdb
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\BL\bin\Debug\BL.dll
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\BL\bin\Debug\BL.pdb
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\BL\obj\Debug\BL.dll
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\BL\obj\Debug\BL.pdb
+C:\Users\RomanNik\Desktop\FiguresPaint-master\BL\bin\Debug\BL.dll
+C:\Users\RomanNik\Desktop\FiguresPaint-master\BL\bin\Debug\BL.pdb
+C:\Users\RomanNik\Desktop\FiguresPaint-master\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\RomanNik\Desktop\FiguresPaint-master\BL\obj\Debug\BL.dll
+C:\Users\RomanNik\Desktop\FiguresPaint-master\BL\obj\Debug\BL.pdb
+C:\Users\RomanNik\Source\Repos\FiguresPaint\BL\bin\Debug\BL.dll
+C:\Users\RomanNik\Source\Repos\FiguresPaint\BL\bin\Debug\BL.pdb
+C:\Users\RomanNik\Source\Repos\FiguresPaint\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\RomanNik\Source\Repos\FiguresPaint\BL\obj\Debug\BL.dll
+C:\Users\RomanNik\Source\Repos\FiguresPaint\BL\obj\Debug\BL.pdb

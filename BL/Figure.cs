@@ -17,5 +17,7 @@ namespace BL
         int Width { get; set; }
         int LineWidth { get; set; }
         void Draw(ref Bitmap bmp);
+        Figure Clone();
+        int Type { get; }
     }
 }

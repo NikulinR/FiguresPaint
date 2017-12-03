@@ -20,3 +20,36 @@ D:\Proecty huekty and other huynya\FiguresPaint\PaintForm\obj\Debug\PaintForm.cs
 D:\Proecty huekty and other huynya\FiguresPaint\PaintForm\obj\Debug\PaintForm.FormPaint.resources
 D:\Proecty huekty and other huynya\FiguresPaint\PaintForm\obj\Debug\PaintForm.Properties.Resources.resources
 D:\Proecty huekty and other huynya\FiguresPaint\PaintForm\obj\Debug\PaintForm.csproj.GenerateResource.Cache
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\PaintForm\bin\Debug\PaintForm.exe.config
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\PaintForm\obj\Debug\PaintForm.exe
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\PaintForm\obj\Debug\PaintForm.pdb
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\PaintForm\bin\Debug\PaintForm.exe
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\PaintForm\bin\Debug\PaintForm.pdb
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\PaintForm\bin\Debug\BL.dll
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\PaintForm\bin\Debug\BL.pdb
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\PaintForm\obj\Debug\PaintForm.csprojResolveAssemblyReference.cache
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\PaintForm\obj\Debug\PaintForm.FormPaint.resources
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\PaintForm\obj\Debug\PaintForm.Properties.Resources.resources
+\\csfs\home$\nikulin_r_a\Profile\Desktop\FiguresPaint-master\PaintForm\obj\Debug\PaintForm.csproj.GenerateResource.Cache
+C:\Users\RomanNik\Desktop\FiguresPaint-master\PaintForm\bin\Debug\PaintForm.exe.config
+C:\Users\RomanNik\Desktop\FiguresPaint-master\PaintForm\obj\Debug\PaintForm.exe
+C:\Users\RomanNik\Desktop\FiguresPaint-master\PaintForm\obj\Debug\PaintForm.pdb
+C:\Users\RomanNik\Desktop\FiguresPaint-master\PaintForm\bin\Debug\PaintForm.exe
+C:\Users\RomanNik\Desktop\FiguresPaint-master\PaintForm\bin\Debug\PaintForm.pdb
+C:\Users\RomanNik\Desktop\FiguresPaint-master\PaintForm\bin\Debug\BL.dll
+C:\Users\RomanNik\Desktop\FiguresPaint-master\PaintForm\bin\Debug\BL.pdb
+C:\Users\RomanNik\Desktop\FiguresPaint-master\PaintForm\obj\Debug\PaintForm.csprojResolveAssemblyReference.cache
+C:\Users\RomanNik\Desktop\FiguresPaint-master\PaintForm\obj\Debug\PaintForm.FormPaint.resources
+C:\Users\RomanNik\Desktop\FiguresPaint-master\PaintForm\obj\Debug\PaintForm.Properties.Resources.resources
+C:\Users\RomanNik\Desktop\FiguresPaint-master\PaintForm\obj\Debug\PaintForm.csproj.GenerateResource.Cache
+C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\bin\Debug\PaintForm.exe.config
+C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.exe
+C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.pdb
+C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\bin\Debug\PaintForm.exe
+C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\bin\Debug\PaintForm.pdb
+C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\bin\Debug\BL.dll
+C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\bin\Debug\BL.pdb
+C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.csprojResolveAssemblyReference.cache
+C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.FormPaint.resources
+C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.Properties.Resources.resources
+C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.csproj.GenerateResource.Cache

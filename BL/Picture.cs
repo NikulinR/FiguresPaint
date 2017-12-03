@@ -10,45 +10,64 @@ namespace BL
     {
         public List<Figure> Figures = new List<Figure>();
         Stack<Figure> Deletes = new Stack<Figure>();
-        public void Delete(int x, int y)
+
+        
+
+        public Figure Choose(int x, int y)
         {
+            Figure chosen = null;
             bool found = false;
+            if(!found)
             foreach (var item in Figures)
             {
                 if (item.Width > 0 && item.Height > 0)
                     if ((item.X < x && x < item.X + item.Width) && (item.Y < y && y < item.Y + item.Height))
                     {
-                        Deletes.Push(item);
+                        chosen = item;
                         found = true;
                         break;
                     }
                 if (item.Width < 0 && item.Height > 0)
                     if ((item.X + item.Width < x && x < item.X) && (item.Y < y && y < item.Y + item.Height))
                     {
-                        Deletes.Push(item);
+                        chosen = item;
                         found = true;
                         break;
-                    }  
+                    }
                 if (item.Width > 0 && item.Height < 0)
                     if ((item.X < x && x < item.X + item.Width) && (item.Y + item.Height < y && y < item.Y))
                     {
-                        Deletes.Push(item);
+                        chosen = item;
                         found = true;
                         break;
-                    }  
+                    }
                 if (item.Width < 0 && item.Height < 0)
                     if ((item.X + item.Width < x && x < item.X) && (item.Y + item.Height < y && y < item.Y))
                     {
-                        Deletes.Push(item);
+                        chosen = item;
                         found = true;
                         break;
                     }
             }
-            if (found)
-            {
-                Figures.Remove(Deletes.Peek());
-            }
+            return chosen;
         }
+
+        public void Delete(int x, int y)
+        {
+            Figures.Remove(Choose(x, y));
+        }
+
+        public void Move(Figure chosen, int xd, int yd)
+        {
+            chosen.X = xd;
+            chosen.Y = yd;
+        }
+
+        public Figure Copy(Figure fg)
+        {
+            return fg.Clone();
+        }
+
         public void ReturnDeleted()
         {
             int count = Deletes.Count;
@@ -74,12 +93,12 @@ namespace BL
         void Execute();
         void Undo();
     }
-    public class DeleteCommand:ICommand
+    public class CommandDelete:ICommand
     {
         Picture picture;
         int X;
         int Y;
-        public DeleteCommand(Picture pic, int x, int y)
+        public CommandDelete(Picture pic, int x, int y)
         {
             picture = pic;
             X = x;
@@ -94,10 +113,35 @@ namespace BL
             picture.Return();
         }
     }
-    public class StepCommand:ICommand
+
+    public class CommandMove : ICommand
     {
         Picture picture;
-        public StepCommand(Picture pic)
+        Figure fig;
+        int X;
+        int Y;
+        public CommandMove(Picture pic, Figure fig, int x, int y)
+        {
+            picture = pic;
+            this.fig = fig;
+            X = x;
+            Y = y;
+        }
+        public void Execute()
+        {
+            picture.Move(fig, X, Y);
+        }
+        public void Undo()
+        {
+            picture.Return();
+        }
+    }
+    
+
+    public class CommandStep : ICommand
+    {
+        Picture picture;
+        public CommandStep(Picture pic)
         {
             picture = pic;
         }
@@ -110,7 +154,9 @@ namespace BL
             picture.Return();
         }
     }
-    public class noCommand:ICommand
+    
+
+    public class CommandNull:ICommand
     {
         public void Execute()
         {
@@ -124,24 +170,16 @@ namespace BL
 
     public class Invoker
     {
-        ICommand[] commands;
         Stack<ICommand> commandhistory;
         public Invoker()
         {
-            commands = new ICommand[3];
-            for (int i = 0; i < commands.Length; i++)
-                commands[i] = new noCommand();
             commandhistory = new Stack<ICommand>();
         }
-
-        public void SetCommand(int number, ICommand c)
+        
+        public void PressButton(ICommand command)
         {
-            commands[number] = c;
-        }
-        public void PressButton(int number)
-        {
-            commands[number].Execute();
-            commandhistory.Push(commands[number]);
+            command.Execute();
+            commandhistory.Push(command);
         }
         public void PressUndoButton()
         {

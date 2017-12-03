@@ -15,6 +15,7 @@ namespace BL
         public int Height { get; set; }
         public int Width { get; set; }
         public int LineWidth { get; set; }
+        public int Type { get; }
 
         public FLine(int x, int y, Color color, int height, int width, int lineWidth)
         {
@@ -24,6 +25,7 @@ namespace BL
             Height = height;
             Width = width;
             LineWidth = lineWidth;
+            Type = 3;
         }
 
         public void Draw(ref Bitmap bmp)
@@ -34,6 +36,11 @@ namespace BL
             Pen myPen = new Pen(FColor, LineWidth);
             G.DrawLine(myPen, p1, p2);
             G.Dispose();
+        }
+
+        public Figure Clone()
+        {
+            return new FLine(X, Y, FColor, Height, Width, LineWidth);
         }
     }
 }
