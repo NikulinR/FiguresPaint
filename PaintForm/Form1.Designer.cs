@@ -32,23 +32,25 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnForward = new System.Windows.Forms.Button();
             this.gbFigure = new System.Windows.Forms.GroupBox();
-            this.rbDel = new System.Windows.Forms.RadioButton();
             this.rbOval = new System.Windows.Forms.RadioButton();
             this.rbRectangle = new System.Windows.Forms.RadioButton();
             this.rbLine = new System.Windows.Forms.RadioButton();
+            this.rbDel = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbRed = new System.Windows.Forms.RadioButton();
-            this.rbGreen = new System.Windows.Forms.RadioButton();
-            this.rbBlue = new System.Windows.Forms.RadioButton();
-            this.rbOrange = new System.Windows.Forms.RadioButton();
-            this.rbYellow = new System.Windows.Forms.RadioButton();
-            this.rbIndigo = new System.Windows.Forms.RadioButton();
-            this.rbViolet = new System.Windows.Forms.RadioButton();
             this.rbBlack = new System.Windows.Forms.RadioButton();
+            this.rbViolet = new System.Windows.Forms.RadioButton();
+            this.rbIndigo = new System.Windows.Forms.RadioButton();
+            this.rbYellow = new System.Windows.Forms.RadioButton();
+            this.rbOrange = new System.Windows.Forms.RadioButton();
+            this.rbBlue = new System.Windows.Forms.RadioButton();
+            this.rbGreen = new System.Windows.Forms.RadioButton();
+            this.rbRed = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbDraw = new System.Windows.Forms.RadioButton();
-            this.rbCopy = new System.Windows.Forms.RadioButton();
             this.rbMove = new System.Windows.Forms.RadioButton();
+            this.rbCopy = new System.Windows.Forms.RadioButton();
+            this.rbDraw = new System.Windows.Forms.RadioButton();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.color_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbFigure.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -101,16 +103,6 @@
             this.gbFigure.TabStop = false;
             this.gbFigure.Text = "Figure";
             // 
-            // rbDel
-            // 
-            this.rbDel.AutoSize = true;
-            this.rbDel.Location = new System.Drawing.Point(6, 19);
-            this.rbDel.Name = "rbDel";
-            this.rbDel.Size = new System.Drawing.Size(56, 17);
-            this.rbDel.TabIndex = 3;
-            this.rbDel.Text = "Delete";
-            this.rbDel.UseVisualStyleBackColor = true;
-            // 
             // rbOval
             // 
             this.rbOval.AutoSize = true;
@@ -143,6 +135,16 @@
             this.rbLine.Text = "Line";
             this.rbLine.UseVisualStyleBackColor = true;
             // 
+            // rbDel
+            // 
+            this.rbDel.AutoSize = true;
+            this.rbDel.Location = new System.Drawing.Point(6, 19);
+            this.rbDel.Name = "rbDel";
+            this.rbDel.Size = new System.Drawing.Size(56, 17);
+            this.rbDel.TabIndex = 3;
+            this.rbDel.Text = "Delete";
+            this.rbDel.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
@@ -161,71 +163,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Color";
             // 
-            // rbRed
+            // rbBlack
             // 
-            this.rbRed.AutoSize = true;
-            this.rbRed.ForeColor = System.Drawing.Color.Red;
-            this.rbRed.Location = new System.Drawing.Point(6, 19);
-            this.rbRed.Name = "rbRed";
-            this.rbRed.Size = new System.Drawing.Size(45, 17);
-            this.rbRed.TabIndex = 0;
-            this.rbRed.Text = "Red";
-            this.rbRed.UseVisualStyleBackColor = true;
-            // 
-            // rbGreen
-            // 
-            this.rbGreen.AutoSize = true;
-            this.rbGreen.ForeColor = System.Drawing.Color.Green;
-            this.rbGreen.Location = new System.Drawing.Point(6, 88);
-            this.rbGreen.Name = "rbGreen";
-            this.rbGreen.Size = new System.Drawing.Size(54, 17);
-            this.rbGreen.TabIndex = 1;
-            this.rbGreen.Text = "Green";
-            this.rbGreen.UseVisualStyleBackColor = true;
-            // 
-            // rbBlue
-            // 
-            this.rbBlue.AutoSize = true;
-            this.rbBlue.ForeColor = System.Drawing.Color.Blue;
-            this.rbBlue.Location = new System.Drawing.Point(6, 111);
-            this.rbBlue.Name = "rbBlue";
-            this.rbBlue.Size = new System.Drawing.Size(46, 17);
-            this.rbBlue.TabIndex = 2;
-            this.rbBlue.Text = "Blue";
-            this.rbBlue.UseVisualStyleBackColor = true;
-            // 
-            // rbOrange
-            // 
-            this.rbOrange.AutoSize = true;
-            this.rbOrange.ForeColor = System.Drawing.Color.Orange;
-            this.rbOrange.Location = new System.Drawing.Point(6, 42);
-            this.rbOrange.Name = "rbOrange";
-            this.rbOrange.Size = new System.Drawing.Size(60, 17);
-            this.rbOrange.TabIndex = 3;
-            this.rbOrange.Text = "Orange";
-            this.rbOrange.UseVisualStyleBackColor = true;
-            // 
-            // rbYellow
-            // 
-            this.rbYellow.AutoSize = true;
-            this.rbYellow.ForeColor = System.Drawing.Color.Yellow;
-            this.rbYellow.Location = new System.Drawing.Point(6, 65);
-            this.rbYellow.Name = "rbYellow";
-            this.rbYellow.Size = new System.Drawing.Size(56, 17);
-            this.rbYellow.TabIndex = 4;
-            this.rbYellow.Text = "Yellow";
-            this.rbYellow.UseVisualStyleBackColor = true;
-            // 
-            // rbIndigo
-            // 
-            this.rbIndigo.AutoSize = true;
-            this.rbIndigo.ForeColor = System.Drawing.Color.Indigo;
-            this.rbIndigo.Location = new System.Drawing.Point(6, 134);
-            this.rbIndigo.Name = "rbIndigo";
-            this.rbIndigo.Size = new System.Drawing.Size(54, 17);
-            this.rbIndigo.TabIndex = 5;
-            this.rbIndigo.Text = "Indigo";
-            this.rbIndigo.UseVisualStyleBackColor = true;
+            this.rbBlack.AutoSize = true;
+            this.rbBlack.Checked = true;
+            this.rbBlack.Location = new System.Drawing.Point(6, 180);
+            this.rbBlack.Name = "rbBlack";
+            this.rbBlack.Size = new System.Drawing.Size(52, 17);
+            this.rbBlack.TabIndex = 7;
+            this.rbBlack.TabStop = true;
+            this.rbBlack.Text = "Black";
+            this.rbBlack.UseVisualStyleBackColor = true;
             // 
             // rbViolet
             // 
@@ -238,17 +186,71 @@
             this.rbViolet.Text = "Violet";
             this.rbViolet.UseVisualStyleBackColor = true;
             // 
-            // rbBlack
+            // rbIndigo
             // 
-            this.rbBlack.AutoSize = true;
-            this.rbBlack.Checked = true;
-            this.rbBlack.Location = new System.Drawing.Point(6, 180);
-            this.rbBlack.Name = "rbBlack";
-            this.rbBlack.Size = new System.Drawing.Size(52, 17);
-            this.rbBlack.TabIndex = 7;
-            this.rbBlack.TabStop = true;
-            this.rbBlack.Text = "Black";
-            this.rbBlack.UseVisualStyleBackColor = true;
+            this.rbIndigo.AutoSize = true;
+            this.rbIndigo.ForeColor = System.Drawing.Color.Indigo;
+            this.rbIndigo.Location = new System.Drawing.Point(6, 134);
+            this.rbIndigo.Name = "rbIndigo";
+            this.rbIndigo.Size = new System.Drawing.Size(54, 17);
+            this.rbIndigo.TabIndex = 5;
+            this.rbIndigo.Text = "Indigo";
+            this.rbIndigo.UseVisualStyleBackColor = true;
+            // 
+            // rbYellow
+            // 
+            this.rbYellow.AutoSize = true;
+            this.rbYellow.ForeColor = System.Drawing.Color.Yellow;
+            this.rbYellow.Location = new System.Drawing.Point(6, 65);
+            this.rbYellow.Name = "rbYellow";
+            this.rbYellow.Size = new System.Drawing.Size(56, 17);
+            this.rbYellow.TabIndex = 4;
+            this.rbYellow.Text = "Yellow";
+            this.rbYellow.UseVisualStyleBackColor = true;
+            // 
+            // rbOrange
+            // 
+            this.rbOrange.AutoSize = true;
+            this.rbOrange.ForeColor = System.Drawing.Color.Orange;
+            this.rbOrange.Location = new System.Drawing.Point(6, 42);
+            this.rbOrange.Name = "rbOrange";
+            this.rbOrange.Size = new System.Drawing.Size(60, 17);
+            this.rbOrange.TabIndex = 3;
+            this.rbOrange.Text = "Orange";
+            this.rbOrange.UseVisualStyleBackColor = true;
+            // 
+            // rbBlue
+            // 
+            this.rbBlue.AutoSize = true;
+            this.rbBlue.ForeColor = System.Drawing.Color.Blue;
+            this.rbBlue.Location = new System.Drawing.Point(6, 111);
+            this.rbBlue.Name = "rbBlue";
+            this.rbBlue.Size = new System.Drawing.Size(46, 17);
+            this.rbBlue.TabIndex = 2;
+            this.rbBlue.Text = "Blue";
+            this.rbBlue.UseVisualStyleBackColor = true;
+            // 
+            // rbGreen
+            // 
+            this.rbGreen.AutoSize = true;
+            this.rbGreen.ForeColor = System.Drawing.Color.Green;
+            this.rbGreen.Location = new System.Drawing.Point(6, 88);
+            this.rbGreen.Name = "rbGreen";
+            this.rbGreen.Size = new System.Drawing.Size(54, 17);
+            this.rbGreen.TabIndex = 1;
+            this.rbGreen.Text = "Green";
+            this.rbGreen.UseVisualStyleBackColor = true;
+            // 
+            // rbRed
+            // 
+            this.rbRed.AutoSize = true;
+            this.rbRed.ForeColor = System.Drawing.Color.Red;
+            this.rbRed.Location = new System.Drawing.Point(6, 19);
+            this.rbRed.Name = "rbRed";
+            this.rbRed.Size = new System.Drawing.Size(45, 17);
+            this.rbRed.TabIndex = 0;
+            this.rbRed.Text = "Red";
+            this.rbRed.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -263,6 +265,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Actions";
             // 
+            // rbMove
+            // 
+            this.rbMove.AutoSize = true;
+            this.rbMove.Location = new System.Drawing.Point(6, 88);
+            this.rbMove.Name = "rbMove";
+            this.rbMove.Size = new System.Drawing.Size(52, 17);
+            this.rbMove.TabIndex = 6;
+            this.rbMove.Text = "Move";
+            this.rbMove.UseVisualStyleBackColor = true;
+            // 
+            // rbCopy
+            // 
+            this.rbCopy.AutoSize = true;
+            this.rbCopy.Location = new System.Drawing.Point(6, 65);
+            this.rbCopy.Name = "rbCopy";
+            this.rbCopy.Size = new System.Drawing.Size(49, 17);
+            this.rbCopy.TabIndex = 5;
+            this.rbCopy.Text = "Copy";
+            this.rbCopy.UseVisualStyleBackColor = true;
+            // 
             // rbDraw
             // 
             this.rbDraw.AutoSize = true;
@@ -275,31 +297,22 @@
             this.rbDraw.Text = "Draw";
             this.rbDraw.UseVisualStyleBackColor = true;
             // 
-            // rbCopy
+            // color_btn
             // 
-            this.rbCopy.AutoSize = true;
-            this.rbCopy.Location = new System.Drawing.Point(6, 65);
-            this.rbCopy.Name = "rbCopy";
-            this.rbCopy.Size = new System.Drawing.Size(49, 17);
-            this.rbCopy.TabIndex = 5;
-            this.rbCopy.Text = "Copy";
-            this.rbCopy.UseVisualStyleBackColor = true;
-            // 
-            // rbMove
-            // 
-            this.rbMove.AutoSize = true;
-            this.rbMove.Location = new System.Drawing.Point(6, 88);
-            this.rbMove.Name = "rbMove";
-            this.rbMove.Size = new System.Drawing.Size(52, 17);
-            this.rbMove.TabIndex = 6;
-            this.rbMove.Text = "Move";
-            this.rbMove.UseVisualStyleBackColor = true;
+            this.color_btn.Location = new System.Drawing.Point(12, 505);
+            this.color_btn.Name = "color_btn";
+            this.color_btn.Size = new System.Drawing.Size(75, 23);
+            this.color_btn.TabIndex = 6;
+            this.color_btn.Text = "Color";
+            this.color_btn.UseVisualStyleBackColor = true;
+            this.color_btn.Click += new System.EventHandler(this.color_btn_Click);
             // 
             // FormPaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 511);
+            this.ClientSize = new System.Drawing.Size(776, 581);
+            this.Controls.Add(this.color_btn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbFigure);
@@ -313,6 +326,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "FiguresPaint";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.FormPaint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbFigure.ResumeLayout(false);
             this.gbFigure.PerformLayout();
@@ -347,6 +361,8 @@
         private System.Windows.Forms.RadioButton rbMove;
         private System.Windows.Forms.RadioButton rbCopy;
         private System.Windows.Forms.RadioButton rbDraw;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Button color_btn;
     }
 }
 

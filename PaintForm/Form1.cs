@@ -17,6 +17,8 @@ namespace PaintForm
         {
             InitializeComponent();
             bmp = new Bitmap(pictureBox1.Size.Width, pictureBox1.Size.Height);
+           // color_btn.Click += color_btn_Click;
+            // colorDialog1.FullOpen = true;
             bmptemp = new Bitmap(pictureBox1.Size.Width, pictureBox1.Size.Height);
             draw = new BL.FDrawing(bmp);
         }
@@ -53,6 +55,7 @@ namespace PaintForm
                 draw.FDraw(pic, ref bmp);
                 pictureBox1.Image = bmp;
             }
+            //
             if (rbMove.Checked)
             {
                 chosen = pic.Choose(e.Location.X, e.Location.Y);
@@ -63,10 +66,11 @@ namespace PaintForm
                 if (rbCopy.Checked)
                 copied = pic.Choose(e.Location.X, e.Location.Y);
             ///////////////////////////////////////////////////
-
+                  if(color.Name == "0")
+                     color = Color.Black;
 
             //////////////COLORS//////////////
-            if (rbBlack.Checked)
+           /* if (rbBlack.Checked)
                 color = Color.Black;
             if (rbRed.Checked)
                 color = Color.Red;
@@ -81,7 +85,7 @@ namespace PaintForm
             if (rbIndigo.Checked)
                 color = Color.Indigo;
             if (rbViolet.Checked)
-                color = Color.Violet;
+                color = Color.Violet;*/
             ///////////////////////////////////////////////////////
 
 
@@ -161,6 +165,20 @@ namespace PaintForm
             draw.FDraw(pic, ref bmp);
             pictureBox1.Image = bmp;
         }
-        
+
+        private void color_btn_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+                color = colorDialog1.Color;
+         //   else color = Color.Black;
+        }
+
+        private void FormPaint_Load(object sender, EventArgs e)
+        {
+          ///  DialogResult result = colorDialog1.ShowDialog();
+          //  if (result == DialogResult.Cancel)
+          //      color = colorDialog1.Color;
+          //  else color = Color.Black;
+        }
     }
 }

@@ -53,3 +53,14 @@ C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.csproj
 C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.FormPaint.resources
 C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.Properties.Resources.resources
 C:\Users\RomanNik\Source\Repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.csproj.GenerateResource.Cache
+C:\Users\kitsu\Desktop\My_repos\FiguresPaint\PaintForm\bin\Debug\PaintForm.exe.config
+C:\Users\kitsu\Desktop\My_repos\FiguresPaint\PaintForm\bin\Debug\PaintForm.exe
+C:\Users\kitsu\Desktop\My_repos\FiguresPaint\PaintForm\bin\Debug\PaintForm.pdb
+C:\Users\kitsu\Desktop\My_repos\FiguresPaint\PaintForm\bin\Debug\BL.dll
+C:\Users\kitsu\Desktop\My_repos\FiguresPaint\PaintForm\bin\Debug\BL.pdb
+C:\Users\kitsu\Desktop\My_repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.csprojResolveAssemblyReference.cache
+C:\Users\kitsu\Desktop\My_repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.FormPaint.resources
+C:\Users\kitsu\Desktop\My_repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.Properties.Resources.resources
+C:\Users\kitsu\Desktop\My_repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.csproj.GenerateResource.Cache
+C:\Users\kitsu\Desktop\My_repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.exe
+C:\Users\kitsu\Desktop\My_repos\FiguresPaint\PaintForm\obj\Debug\PaintForm.pdb
