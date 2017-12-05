@@ -26,20 +26,6 @@ namespace BL
             }
         }
 
-        public void FDrawMove(int idfigure, int x, int y, int width,int height, ref Bitmap bmp)
-        {
-            Figure fig=null;
-            if (idfigure == 1)
-                fig = new FRectangle(x, y, Color.DarkRed, height, width, 2);
-            else if (idfigure == 2)
-                fig = new FOval(x, y, Color.DarkRed, height, width, 2);
-            else if(idfigure == 3)
-                fig = new FLine(x, y, Color.DarkRed, height, width, 2);
-
-            if(fig != null)
-                fig.Draw(ref bmp);
-        }
-
     }
 
     public class Decorator
@@ -56,11 +42,11 @@ namespace BL
         {
             Figure fig=null;
             if (idfigure == 1)
-                fig = new FRectangle(x, y, Color.DarkRed, height, width, 2);
+                fig = new FRectangle(x, y, Color.DarkRed, Color.Empty, height, width, 2);
             else if (idfigure == 2)
-                fig = new FOval(x, y, Color.DarkRed, height, width, 2);
+                fig = new FOval(x, y, Color.DarkRed, Color.Empty, height, width, 2);
             else if(idfigure == 3)
-                fig = new FLine(x, y, Color.DarkRed, height, width, 2);
+                fig = new FLine(x, y, Color.DarkRed, Color.Empty, height, width, 2);
 
 
             if (fig != null)

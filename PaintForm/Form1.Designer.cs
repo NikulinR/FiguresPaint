@@ -162,7 +162,7 @@
             this.groupBox1.Size = new System.Drawing.Size(77, 205);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Color";
+            this.groupBox1.Text = "Line сolor";
             // 
             // rbBlack
             // 
@@ -319,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 581);
+            this.ClientSize = new System.Drawing.Size(776, 532);
             this.Controls.Add(this.tbWidthLine);
             this.Controls.Add(this.color_btn);
             this.Controls.Add(this.groupBox2);

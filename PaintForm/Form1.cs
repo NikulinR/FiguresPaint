@@ -31,6 +31,7 @@ namespace PaintForm
         
         BL.Decorator draw;
 
+        Color fillcolor = Color.Empty;
         Color color;
 
         Invoker invoker = new Invoker();    // мультипульт
@@ -71,7 +72,7 @@ namespace PaintForm
                      color = Color.Black;
 
             //////////////COLORS//////////////
-           /* if (rbBlack.Checked)
+           if (rbBlack.Checked)
                 color = Color.Black;
             if (rbRed.Checked)
                 color = Color.Red;
@@ -86,7 +87,7 @@ namespace PaintForm
             if (rbIndigo.Checked)
                 color = Color.Indigo;
             if (rbViolet.Checked)
-                color = Color.Violet;*/
+                color = Color.Violet;
             ///////////////////////////////////////////////////////
 
 
@@ -121,11 +122,11 @@ namespace PaintForm
             {
                 invoker.PressButton(new CommandDraw(pic));
                 if (figid == 1)
-                    RF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, linewidth, ref pic);
+                    RF.CreateFigure(begin.X, begin.Y, color, fillcolor, ydist, xdist, linewidth, ref pic);
                 else if (figid == 2)
-                    OF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, linewidth, ref pic);
+                    OF.CreateFigure(begin.X, begin.Y, color, fillcolor, ydist, xdist, linewidth, ref pic);
                 else if (figid == 3)
-                    LF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, linewidth, ref pic);
+                    LF.CreateFigure(begin.X, begin.Y, color, fillcolor, ydist, xdist, linewidth, ref pic);
 
                 draw.fd.FDraw(pic, ref bmp);
                 pictureBox1.Image = bmp;
@@ -176,7 +177,7 @@ namespace PaintForm
         private void color_btn_Click(object sender, EventArgs e)
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
-                color = colorDialog1.Color;
+                fillcolor = colorDialog1.Color;
          //   else color = Color.Black;
         }
 

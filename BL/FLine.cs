@@ -12,6 +12,7 @@ namespace BL
         public int X { get; set; }
         public int Y { get; set; }
         public Color FColor { get; set; }
+        public Color FillColor { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
         public float LineWidth { get; set; }
@@ -19,11 +20,13 @@ namespace BL
         public bool Chosed { get; set; }
         public bool isBox { get; set; }
 
-        public FLine(int x, int y, Color color, int height, int width, float lineWidth)
+
+        public FLine(int x, int y, Color color,Color fill, int height, int width, float lineWidth)
         {
             X = x;
             Y = y;
             FColor = color;
+            FillColor = fill;
             Height = height;
             Width = width;
             LineWidth = lineWidth;
@@ -43,7 +46,7 @@ namespace BL
 
         public Figure Clone()
         {
-            return new FLine(X, Y, FColor, Height, Width, LineWidth);
+            return new FLine(X, Y, FColor, FillColor, Height, Width, LineWidth);
         }
     }
 }
