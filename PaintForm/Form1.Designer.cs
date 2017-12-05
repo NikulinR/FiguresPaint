@@ -54,10 +54,14 @@
             this.tbWidthLine = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.lWidthLine = new System.Windows.Forms.Label();
+            this.tbAfill = new System.Windows.Forms.TrackBar();
+            this.lAlpha = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbFigure.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAfill)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -336,11 +340,44 @@
             this.lWidthLine.TabIndex = 9;
             this.lWidthLine.Text = "Line width:";
             // 
+            // tbAfill
+            // 
+            this.tbAfill.Location = new System.Drawing.Point(866, 38);
+            this.tbAfill.Maximum = 255;
+            this.tbAfill.Name = "tbAfill";
+            this.tbAfill.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tbAfill.Size = new System.Drawing.Size(45, 542);
+            this.tbAfill.TabIndex = 11;
+            this.tbAfill.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.tbAfill.Value = 255;
+            this.tbAfill.Scroll += new System.EventHandler(this.tbAfill_Scroll);
+            // 
+            // lAlpha
+            // 
+            this.lAlpha.AutoSize = true;
+            this.lAlpha.Location = new System.Drawing.Point(863, 9);
+            this.lAlpha.Name = "lAlpha";
+            this.lAlpha.Size = new System.Drawing.Size(37, 13);
+            this.lAlpha.TabIndex = 12;
+            this.lAlpha.Text = "Alpha:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(863, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(22, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Fill:";
+            // 
             // FormPaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 592);
+            this.ClientSize = new System.Drawing.Size(914, 592);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lAlpha);
+            this.Controls.Add(this.tbAfill);
             this.Controls.Add(this.lWidthLine);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.tbWidthLine);
@@ -366,6 +403,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAfill)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,6 +437,9 @@
         private System.Windows.Forms.TextBox tbWidthLine;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label lWidthLine;
+        private System.Windows.Forms.TrackBar tbAfill;
+        private System.Windows.Forms.Label lAlpha;
+        private System.Windows.Forms.Label label2;
     }
 }
 

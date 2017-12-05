@@ -49,6 +49,7 @@ namespace PaintForm
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
+            
             /////////////ACTIONS////////////////////////////////
             if (rbDel.Checked)
             {
@@ -65,7 +66,7 @@ namespace PaintForm
                 chosen.FColor = Color.White;
                 draw.fd.FDraw(pic, ref bmp);
             }
-                if (rbCopy.Checked)
+                if (rbCopy.Checked && chosen!= null)
                 copied = chosen.Clone();
             ///////////////////////////////////////////////////
                   if(color.Name == "0")
@@ -89,7 +90,7 @@ namespace PaintForm
             if (rbViolet.Checked)
                 color = Color.Violet;
             ///////////////////////////////////////////////////////
-
+            
 
             ////////////FIGURES/////////////////
             if (rbRectangle.Checked)
@@ -116,7 +117,6 @@ namespace PaintForm
             float linewidth;
             if (!float.TryParse(tbWidthLine.Text, out linewidth))
                 linewidth = 2;
-
 
             if (rbDraw.Checked)
             {
@@ -158,6 +158,7 @@ namespace PaintForm
                 draw.FDrawMove(chosen.Type, e.Location.X, e.Location.Y, chosen.Width, chosen.Height, ref bmptemp);
 
                 pictureBox1.Image = bmptemp;
+                
             }            
         }
         
@@ -192,9 +193,14 @@ namespace PaintForm
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            pic.Figures.Clear();
+            pic = new Picture();
             draw.fd.FDraw(pic, ref bmp);
             pictureBox1.Image = bmp;
+        }
+        
+        private void tbAfill_Scroll(object sender, EventArgs e)
+        {
+            fillcolor = Color.FromArgb(tbAfill.Value, fillcolor);
         }
     }
 }
