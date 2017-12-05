@@ -15,11 +15,12 @@ namespace BL
         Color FColor { get; set; }
         int Height { get; set; }
         int Width { get; set; }
-        int LineWidth { get; set; }
+        float LineWidth { get; set; }
         void Draw(ref Bitmap bmp);
         Figure Clone();
-       // void ReturnBox();
-      //  void AddToBox(Figure f);
+        bool isBox { get; }
+     //   void ReturnBox();
+     //  void AddToBox(Figure f);
        // void RemoveFigure();
         int Type { get; }
     }

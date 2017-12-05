@@ -9,7 +9,7 @@ namespace BL
 {
     public class RectFactory:FigureFactory
     {
-        public void CreateFigure(int x, int y, Color color, int height, int width, int lineWidth,ref Picture pic)
+        public void CreateFigure(int x, int y, Color color, int height, int width, float lineWidth,ref Picture pic)
         {
             pic.Figures.Add(new FRectangle(x, y, color, height, width, lineWidth));
         }

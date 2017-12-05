@@ -110,16 +110,19 @@ namespace PaintForm
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {            
             clicked = false;
-
+            float linewidth;
+            if (float.TryParse(tb_linewidth.Text, out float l))
+                linewidth = l;
+            else linewidth = 2;
             if (rbDraw.Checked)
             {
                 
                 if (figid == 1)
-                    RF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, 2, ref pic);
+                    RF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, linewidth, ref pic);
                 else if (figid == 2)
-                    OF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, 2, ref pic);
+                    OF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, linewidth, ref pic);
                 else if (figid == 3)
-                    LF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, 2, ref pic);
+                    LF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, linewidth, ref pic);
 
                 draw.FDraw(pic, ref bmp);
                 pictureBox1.Image = bmp;

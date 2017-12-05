@@ -14,10 +14,12 @@ namespace BL
         public Color FColor { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
-        public int LineWidth { get; set; }
+        public float LineWidth { get; set; }
         public int Type { get; }
 
-        public FLine(int x, int y, Color color, int height, int width, int lineWidth)
+        public bool isBox { get; set; }
+
+        public FLine(int x, int y, Color color, int height, int width, float lineWidth)
         {
             X = x;
             Y = y;

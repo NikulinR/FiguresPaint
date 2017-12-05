@@ -13,18 +13,31 @@ namespace BL
     }
     class Box : Figure
     {
-        public int X { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Y { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Color FColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Height { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Width { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int LineWidth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+         public int X { get; set; }
+        public int Y { get; set; }
+        public Color FColor { get; set; }
+        public int Height { get; set; }
+        public int Width { get; set; }
+        public float LineWidth { get; set; }
+        public int Type { get; }
+        public bool isBox { get => true; set { value = true; } } //фигня какая-то
+        List<Figure> components = new List<Figure>();
 
-        public int Type => throw new NotImplementedException();
-
-        public void AddToBox(Figure f)
+        // у класса компонент (фигура) придётся реализовывать эти методы в каждом потомке, я хз как это делать 
+        public void AddToBox(Figure component)
         {
-
+            bool a = ((Width > 0) && (Height > 0)) && ((component.X >= X) && (component.Y >= Y)
+                      && (component.X + component.Width <= X + Width && component.Y + component.Height <= Y + Height));
+            bool b = ((Width > 0) && (Height < 0)) && ((component.X >= X) && (component.Y <= Y)
+                      && (component.X + component.Width <= X + Width && component.Y + component.Height >= Y + Height));
+            bool c = ((Width < 0) && (Height > 0)) && ((component.X <= X) && (component.Y >= Y)
+                      && (component.X + component.Width >= X + Width && component.Y + component.Height <= Y + Height));
+            bool d = ((Width < 0) && (Height < 0)) && ((component.X <= X) && (component.Y <= Y)
+                      && (component.X + component.Width >= X + Width && component.Y + component.Height >= Y + Height));
+            // if (leaf.X >= X) && () && () && ()
+            bool ok = a || b || c || d;
+            if (ok)
+                components.Add(component);
         }
 
         public Figure Clone()
@@ -37,9 +50,9 @@ namespace BL
             throw new NotImplementedException();
         }
 
-        public void RemoveFigure()
+        public void RemoveFigure(Figure comp)
         {
-
+            components.Remove(comp);
         }
 
        
@@ -53,22 +66,23 @@ namespace BL
     }
     class Single : Figure
     {
-        int Figure.X { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int Figure.Y { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        Color Figure.FColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int Figure.Height { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int Figure.Width { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int Figure.LineWidth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public Color FColor { get; set; }
+        public int Height { get; set; }
+        public int Width { get; set; }
+        public float LineWidth { get; set; }
+        public int Type { get; }
 
-        int Figure.Type => throw new NotImplementedException();
+        public bool isBox { get; set; }
 
         public void AddToBox(Figure f)
         {
-
+            throw new NotImplementedException();
         }
         public void RemoveFigure()
         {
-
+            throw new NotImplementedException();
         }
 
         
@@ -82,10 +96,6 @@ namespace BL
             throw new NotImplementedException();
         }
       
-        public void ReturnBox()
-        {
-
-        }
 
        
     }
