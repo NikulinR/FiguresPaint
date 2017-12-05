@@ -65,7 +65,7 @@ namespace PaintForm
                 chosen.FColor = Color.White;
                 draw.fd.FDraw(pic, ref bmp);
             }
-                if (rbCopy.Checked)
+                if (rbCopy.Checked && chosen!=null)
                 copied = chosen.Clone();
             ///////////////////////////////////////////////////
                   if(color.Name == "0")
@@ -192,7 +192,7 @@ namespace PaintForm
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            pic.Figures.Clear();
+            pic = new Picture();
             draw.fd.FDraw(pic, ref bmp);
             pictureBox1.Image = bmp;
         }
