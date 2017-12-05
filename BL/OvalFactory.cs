@@ -9,7 +9,7 @@ namespace BL
 {
     public class OvalFactory:FigureFactory
     {
-        public void CreateFigure(int x, int y, Color color, int height, int width, int lineWidth, ref Picture pic)
+        public void CreateFigure(int x, int y, Color color, int height, int width, float lineWidth, ref Picture pic)
         {
             pic.Figures.Add(new FOval(x, y, color, height, width, lineWidth));
         }
