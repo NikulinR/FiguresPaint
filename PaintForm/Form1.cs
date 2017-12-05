@@ -143,6 +143,7 @@ namespace PaintForm
         }
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
+            ActiveForm.Text = "Figures Paint {" + e.Location.X + ", " + e.Location.Y + "}";
             if (clicked && rbDraw.Checked)
             {                
                 bmptemp = (Bitmap)bmp.Clone();
@@ -187,6 +188,13 @@ namespace PaintForm
           //  if (result == DialogResult.Cancel)
           //      color = colorDialog1.Color;
           //  else color = Color.Black;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            pic.Figures.Clear();
+            draw.fd.FDraw(pic, ref bmp);
+            pictureBox1.Image = bmp;
         }
     }
 }
