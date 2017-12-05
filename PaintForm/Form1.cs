@@ -143,6 +143,7 @@ namespace PaintForm
         }
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
+            if(ActiveForm!=null)
             ActiveForm.Text = "Figures Paint {" + e.Location.X + ", " + e.Location.Y + "}";
             if (clicked && rbDraw.Checked)
             {                
