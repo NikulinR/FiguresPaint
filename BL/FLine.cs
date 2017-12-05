@@ -7,10 +7,8 @@ using System.Drawing;
 
 namespace BL
 {
-
-    public class FOval:Figure
+    public class FLine:Figure
     {
-        
         public int X { get; set; }
         public int Y { get; set; }
         public Color FColor { get; set; }
@@ -20,7 +18,7 @@ namespace BL
         public int Type { get; }
         public bool Chosed { get; set; }
 
-        public FOval(int x, int y, Color color, int height, int width, int lineWidth)
+        public FLine(int x, int y, Color color, int height, int width, int lineWidth)
         {
             X = x;
             Y = y;
@@ -28,36 +26,23 @@ namespace BL
             Height = height;
             Width = width;
             LineWidth = lineWidth;
-            Type = 2;
+            Type = 3;
             Chosed = false;
         }
 
         public void Draw(ref Bitmap bmp)
         {
-            Graphics g = Graphics.FromImage(bmp);
-            Rectangle rect = new Rectangle();
-
-            if (Width > 0 && Height > 0)
-                rect = new Rectangle(X, Y, Width, Height);
-
-            if (Width < 0 && Height > 0)
-                rect = new Rectangle(X + Width, Y, -Width, Height);
-
-            if (Width > 0 && Height < 0)
-                rect = new Rectangle(X, Y + Height, Width, -Height);
-
-            if (Width < 0 && Height < 0)
-                rect = new Rectangle(X + Width, Y + Height, -Width, -Height);
-
+            Graphics G = Graphics.FromImage(bmp);
+            Point p1 = new Point(X, Y);
+            Point p2 = new Point(X + Width, Y + Height);
             Pen myPen = new Pen(FColor, LineWidth);
-
-            g.DrawEllipse(myPen, rect);
-            g.Dispose();
+            G.DrawLine(myPen, p1, p2);
+            G.Dispose();
         }
 
         public Figure Clone()
         {
-            return new FOval(X, Y, FColor, Height, Width, LineWidth);
+            return new FLine(X, Y, FColor, Height, Width, LineWidth);
         }
     }
 }

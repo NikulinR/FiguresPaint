@@ -15,7 +15,8 @@ namespace BL
         public int Height { get; set; }
         public int Width { get; set; }
         public int LineWidth { get; set; }
-        
+        public int Type { get; }
+        public bool Chosed { get; set; }
 
         public FRectangle(int x, int y, Color color, int height, int width, int lineWidth)
         {
@@ -25,6 +26,8 @@ namespace BL
             Height = height;
             Width = width;
             LineWidth = lineWidth;
+            Type = 1;
+            Chosed = false;
         }
 
         public void Draw(ref Bitmap bmp)
@@ -48,6 +51,11 @@ namespace BL
             
             g.DrawRectangle(myPen, rect);
             g.Dispose();
+        }
+
+        public Figure Clone()
+        {
+            return new FRectangle(X, Y, FColor, Height, Width, LineWidth);
         }
     }
 }
