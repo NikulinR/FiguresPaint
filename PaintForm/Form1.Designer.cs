@@ -51,6 +51,7 @@
             this.rbDraw = new System.Windows.Forms.RadioButton();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.color_btn = new System.Windows.Forms.Button();
+            this.tbWidthLine = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbFigure.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -307,11 +308,19 @@
             this.color_btn.UseVisualStyleBackColor = true;
             this.color_btn.Click += new System.EventHandler(this.color_btn_Click);
             // 
+            // tbWidthLine
+            // 
+            this.tbWidthLine.Location = new System.Drawing.Point(93, 508);
+            this.tbWidthLine.Name = "tbWidthLine";
+            this.tbWidthLine.Size = new System.Drawing.Size(100, 20);
+            this.tbWidthLine.TabIndex = 7;
+            // 
             // FormPaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 581);
+            this.Controls.Add(this.tbWidthLine);
             this.Controls.Add(this.color_btn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -364,6 +373,7 @@
         private System.Windows.Forms.RadioButton rbDraw;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button color_btn;
+        private System.Windows.Forms.TextBox tbWidthLine;
     }
 }
 

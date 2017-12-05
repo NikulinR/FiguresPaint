@@ -112,15 +112,20 @@ namespace PaintForm
         {            
             clicked = false;
 
+            float linewidth;
+            if (!float.TryParse(tbWidthLine.Text, out linewidth))
+                linewidth = 2;
+
+
             if (rbDraw.Checked)
             {
                 invoker.PressButton(new CommandDraw(pic));
                 if (figid == 1)
-                    RF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, 2, ref pic);
+                    RF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, linewidth, ref pic);
                 else if (figid == 2)
-                    OF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, 2, ref pic);
+                    OF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, linewidth, ref pic);
                 else if (figid == 3)
-                    LF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, 2, ref pic);
+                    LF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, linewidth, ref pic);
 
                 draw.fd.FDraw(pic, ref bmp);
                 pictureBox1.Image = bmp;

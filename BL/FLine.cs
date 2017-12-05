@@ -17,6 +17,7 @@ namespace BL
         public float LineWidth { get; set; }
         public int Type { get; }
         public bool Chosed { get; set; }
+        public bool isBox { get; set; }
 
         public FLine(int x, int y, Color color, int height, int width, float lineWidth)
         {
