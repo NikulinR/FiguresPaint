@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace BL
 {
-    public class FLine:Figure
+    public class FLine: Figure
     {
         public int X { get; set; }
         public int Y { get; set; }

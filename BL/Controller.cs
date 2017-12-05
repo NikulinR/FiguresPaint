@@ -11,7 +11,64 @@ namespace BL
     {
        
     }
-    class Box : Figure
+
+     public abstract class FigureComponent
+    {
+        protected Figure fig;
+        
+       public FigureComponent(Figure f)
+        {
+            fig = f;
+        }
+
+        public abstract void AddToBox(Figure f);
+        public abstract void Remove(Figure f);
+    }
+    public class FigureBox: FigureComponent
+    {
+        List<Figure> box = new List<Figure>();
+        public FigureBox(Figure f)
+          :  base(f)
+        { }
+
+        public override void AddToBox(Figure component)
+        {
+            bool a = (fig.Width > 0) && (fig.Height > 0) && ((component.X >= fig.X) && (component.Y >= fig.Y)
+                      && (component.X + component.Width <= fig.X + fig.Width && component.Y + component.Height <= fig.Y + fig.Height));
+            bool b = ((fig.Width > 0) && (fig.Height < 0)) && ((component.X >= fig.X) && (component.Y <= fig.Y)
+                      && (component.X + component.Width <= fig.X + fig.Width && component.Y + component.Height >= fig.Y + fig.Height));
+            bool c = ((fig.Width < 0) && (fig.Height > 0)) && ((component.X <= fig.X) && (component.Y >= fig.Y)
+                      && (component.X + component.Width >= fig.X + fig.Width && component.Y + component.Height <= fig.Y + fig.Height));
+            bool d = ((fig.Width < 0) && (fig.Height < 0)) && ((component.X <= fig.X) && (component.Y <= fig.Y)
+                      && (component.X + component.Width >= fig.X + fig.Width && component.Y + component.Height >= fig.Y + fig.Height));
+            // if (leaf.X >= X) && () && () && ()
+            bool ok = a || b || c || d;
+            if (ok)
+                box.Add(component);
+        }
+        public override void Remove(Figure f)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    class FigureLeaf: FigureComponent
+    {     
+        public FigureLeaf(Figure f)
+          :  base(f)
+        { }
+        public override void AddToBox(Figure component)
+        {
+            throw new NotImplementedException();
+        }
+        
+        public override void Remove(Figure f)
+        {
+            throw new NotImplementedException();
+        }
+
+    }
+    class Box : Figure // мб убрать это наследование и сделать абстрактный класс с полем фигуры?
     {
          public int X { get; set; }
         public int Y { get; set; }
