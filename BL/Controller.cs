@@ -68,95 +68,81 @@ namespace BL
         }
 
     }
-    class Box : Figure // мб убрать это наследование и сделать абстрактный класс с полем фигуры?
-    {
-         public int X { get; set; }
-        public int Y { get; set; }
-        public Color FColor { get; set; }
-        public Color FillColor { get; set; }
-        public int Height { get; set; }
-        public int Width { get; set; }
-        public float LineWidth { get; set; }
-        public int Type { get; }
-        public bool isBox { get { return true; } set { value = true; } } //фигня какая-то
-        List<Figure> components = new List<Figure>();
-        public bool Chosed { get; set; }
+    //class Box : Figure // мб убрать это наследование и сделать абстрактный класс с полем фигуры?
+    //{
+    //     public int X { get; set; }
+    //    public int Y { get; set; }
+    //    public Color FColor { get; set; }
+    //    public Color FillColor { get; set; }
+    //    public int Height { get; set; }
+    //    public int Width { get; set; }
+    //    public float LineWidth { get; set; }
+    //    public int Type { get; }
+    //    public bool isBox { get { return true; } set { value = true; } } //фигня какая-то
+    //    List<Figure> components = new List<Figure>();
+    //    public bool Chosed { get; set; }
 
-        // у класса компонент (фигура) придётся реализовывать эти методы в каждом потомке, я хз как это делать 
-        public void AddToBox(Figure component)
-        {
-            bool a = ((Width > 0) && (Height > 0)) && ((component.X >= X) && (component.Y >= Y)
-                      && (component.X + component.Width <= X + Width && component.Y + component.Height <= Y + Height));
-            bool b = ((Width > 0) && (Height < 0)) && ((component.X >= X) && (component.Y <= Y)
-                      && (component.X + component.Width <= X + Width && component.Y + component.Height >= Y + Height));
-            bool c = ((Width < 0) && (Height > 0)) && ((component.X <= X) && (component.Y >= Y)
-                      && (component.X + component.Width >= X + Width && component.Y + component.Height <= Y + Height));
-            bool d = ((Width < 0) && (Height < 0)) && ((component.X <= X) && (component.Y <= Y)
-                      && (component.X + component.Width >= X + Width && component.Y + component.Height >= Y + Height));
-            // if (leaf.X >= X) && () && () && ()
-            bool ok = a || b || c || d;
-            if (ok)
-                components.Add(component);
-        }
+    //    // у класса компонент (фигура) придётся реализовывать эти методы в каждом потомке, я хз как это делать 
+    //    public void AddToBox(Figure component)
+    //    {
+    //        bool a = ((Width > 0) && (Height > 0)) && ((component.X >= X) && (component.Y >= Y)
+    //                  && (component.X + component.Width <= X + Width && component.Y + component.Height <= Y + Height));
+    //        bool b = ((Width > 0) && (Height < 0)) && ((component.X >= X) && (component.Y <= Y)
+    //                  && (component.X + component.Width <= X + Width && component.Y + component.Height >= Y + Height));
+    //        bool c = ((Width < 0) && (Height > 0)) && ((component.X <= X) && (component.Y >= Y)
+    //                  && (component.X + component.Width >= X + Width && component.Y + component.Height <= Y + Height));
+    //        bool d = ((Width < 0) && (Height < 0)) && ((component.X <= X) && (component.Y <= Y)
+    //                  && (component.X + component.Width >= X + Width && component.Y + component.Height >= Y + Height));
+    //        // if (leaf.X >= X) && () && () && ()
+    //        bool ok = a || b || c || d;
+    //        if (ok)
+    //            components.Add(component);
+    //    }
 
-        public Figure Clone()
-        {
-            throw new NotImplementedException();
-        }
+    //    public Figure Clone()
+    //    {
+    //        throw new NotImplementedException();
+    //    }
 
-        public void Draw(ref Bitmap bmp)
-        {
-            throw new NotImplementedException();
-        }
+    //    public void Draw(ref Bitmap bmp)
+    //    {
+    //        throw new NotImplementedException();
+    //    }
 
-        public void RemoveFigure(Figure comp)
-        {
-            components.Remove(comp);
-        }
-
-       
-
-        void ReturnBox()
-        {
-
-        }
+    //    public void RemoveFigure(Figure comp)
+    //    {
+    //        components.Remove(comp);
+    //    }
 
        
-    }
-    class Single : Figure
-    {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public Color FColor { get; set; }
-        public Color FillColor { get; set; }
-        public int Height { get; set; }
-        public int Width { get; set; }
-        public float LineWidth { get; set; }
-        public int Type { get; }
-        public bool Chosed { get; set; }
-        public bool isBox { get; set; }
 
-        public void AddToBox(Figure f)
-        {
-            throw new NotImplementedException();
-        }
-        public void RemoveFigure()
-        {
-            throw new NotImplementedException();
-        }
+    //    void ReturnBox()
+    //    {
 
-        
-        Figure Figure.Clone()
-        {
-            throw new NotImplementedException();
-        }
-
-        void Figure.Draw(ref Bitmap bmp)
-        {
-            throw new NotImplementedException();
-        }
-      
+    //    }
 
        
-    }
+    //}
+    //class Single : Figure
+    //{
+    //    public int X { get; set; }
+    //    public int Y { get; set; }
+    //    public Color FColor { get; set; }
+    //    public Color FillColor { get; set; }
+    //    public int Height { get; set; }
+    //    public int Width { get; set; }
+    //    public float LineWidth { get; set; }
+    //    public int Type { get; }
+    //    public bool Chosed { get; set; }
+    //    public bool isBox { get; set; }
+
+    //    public void AddToBox(Figure f)
+    //    {
+    //        throw new NotImplementedException();
+    //    }
+    //    public void RemoveFigure()
+    //    {
+    //        throw new NotImplementedException();
+    //    }    
+    //}
 }

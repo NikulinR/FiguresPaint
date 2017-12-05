@@ -62,7 +62,7 @@ namespace BL
 
         public Figure Clone()
         {
-            return new FOval(X, Y, FColor,FillColor, Height, Width, LineWidth);
+            return new FOval(X, Y, FColor, FillColor, Height, Width, LineWidth);
         }
     }
 }
