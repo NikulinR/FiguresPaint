@@ -56,14 +56,14 @@ namespace PaintForm
                 pictureBox1.Image = bmp;
             }
             //
-            if (rbMove.Checked)
+            else if (rbMove.Checked)
             {
                 chosen = pic.Choose(e.Location.X, e.Location.Y);
                 if (chosen != null)
                 chosen.FColor = Color.White;
                 draw.FDraw(pic, ref bmp);
             }
-                if (rbCopy.Checked)
+             else if (rbCopy.Checked)
                 copied = pic.Choose(e.Location.X, e.Location.Y);
             ///////////////////////////////////////////////////
                   if(color.Name == "0")

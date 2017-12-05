@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace BL
 {
-    public class FRectangle:Figure
+    public class FRectangle: Figure
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -39,13 +39,13 @@ namespace BL
             if (Width>0 && Height>0)
                 rect = new Rectangle(X, Y, Width, Height);
 
-            if (Width < 0 && Height > 0)
+            else if (Width < 0 && Height > 0)
                 rect = new Rectangle(X + Width, Y, -Width, Height);
 
-            if (Width > 0 && Height < 0)
+            else if (Width > 0 && Height < 0)
                 rect = new Rectangle(X, Y+Height, Width, -Height);
 
-            if (Width < 0 && Height < 0)
+            else if (Width < 0 && Height < 0)
                 rect = new Rectangle(X + Width, Y+Height, -Width, -Height);
 
             Pen myPen = new Pen(FColor, LineWidth);

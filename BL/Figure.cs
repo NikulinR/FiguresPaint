@@ -20,7 +20,7 @@ namespace BL
         Figure Clone();
         bool isBox { get; }
      //   void ReturnBox();
-     //  void AddToBox(Figure f);
+     // void AddToBox(Figure f);
        // void RemoveFigure();
         int Type { get; }
     }
