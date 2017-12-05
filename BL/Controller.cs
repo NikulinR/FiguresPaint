@@ -73,12 +73,14 @@ namespace BL
          public int X { get; set; }
         public int Y { get; set; }
         public Color FColor { get; set; }
+        public Color FillColor { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
         public float LineWidth { get; set; }
         public int Type { get; }
-        public bool isBox { get => true; set { value = true; } } //фигня какая-то
+        public bool isBox { get { return true; } set { value = true; } } //фигня какая-то
         List<Figure> components = new List<Figure>();
+        public bool Chosed { get; set; }
 
         // у класса компонент (фигура) придётся реализовывать эти методы в каждом потомке, я хз как это делать 
         public void AddToBox(Figure component)
@@ -126,11 +128,12 @@ namespace BL
         public int X { get; set; }
         public int Y { get; set; }
         public Color FColor { get; set; }
+        public Color FillColor { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
         public float LineWidth { get; set; }
         public int Type { get; }
-
+        public bool Chosed { get; set; }
         public bool isBox { get; set; }
 
         public void AddToBox(Figure f)

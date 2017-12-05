@@ -9,6 +9,6 @@ namespace BL
 {
     public interface FigureFactory
     {
-        void CreateFigure(int x, int y, Color color, int height, int width, float lineWidth, ref Picture pic);
+        void CreateFigure(int x, int y, Color color, Color fillColor, int height, int width, float lineWidth, ref Picture pic);
     }
 }

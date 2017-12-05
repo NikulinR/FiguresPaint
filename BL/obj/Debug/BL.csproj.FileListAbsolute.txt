@@ -28,3 +28,8 @@ C:\Users\kitsu\Desktop\My_repos\FiguresPaint\BL\obj\Debug\BL.dll
 C:\Users\kitsu\Desktop\My_repos\FiguresPaint\BL\obj\Debug\BL.pdb
 C:\Users\kitsu\Desktop\My_repos\FiguresPaint\BL\bin\Debug\BL.dll
 C:\Users\kitsu\Desktop\My_repos\FiguresPaint\BL\bin\Debug\BL.pdb
+C:\Users\Roman\Desktop\FiguresPaint-master\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\Roman\Desktop\FiguresPaint-master\BL\obj\Debug\BL.dll
+C:\Users\Roman\Desktop\FiguresPaint-master\BL\obj\Debug\BL.pdb
+C:\Users\Roman\Desktop\FiguresPaint-master\BL\bin\Debug\BL.dll
+C:\Users\Roman\Desktop\FiguresPaint-master\BL\bin\Debug\BL.pdb

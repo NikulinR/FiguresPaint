@@ -51,8 +51,7 @@
             this.rbDraw = new System.Windows.Forms.RadioButton();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.color_btn = new System.Windows.Forms.Button();
-            this.tb_linewidth = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tbWidthLine = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbFigure.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -163,7 +162,7 @@
             this.groupBox1.Size = new System.Drawing.Size(77, 205);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Color";
+            this.groupBox1.Text = "Line сolor";
             // 
             // rbBlack
             // 
@@ -309,30 +308,19 @@
             this.color_btn.UseVisualStyleBackColor = true;
             this.color_btn.Click += new System.EventHandler(this.color_btn_Click);
             // 
-            // tb_linewidth
+            // tbWidthLine
             // 
-            this.tb_linewidth.Location = new System.Drawing.Point(188, 512);
-            this.tb_linewidth.Name = "tb_linewidth";
-            this.tb_linewidth.Size = new System.Drawing.Size(41, 20);
-            this.tb_linewidth.TabIndex = 7;
-            this.tb_linewidth.Text = "2";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 515);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Толщина линий:";
+            this.tbWidthLine.Location = new System.Drawing.Point(93, 508);
+            this.tbWidthLine.Name = "tbWidthLine";
+            this.tbWidthLine.Size = new System.Drawing.Size(100, 20);
+            this.tbWidthLine.TabIndex = 7;
             // 
             // FormPaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 581);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tb_linewidth);
+            this.ClientSize = new System.Drawing.Size(776, 532);
+            this.Controls.Add(this.tbWidthLine);
             this.Controls.Add(this.color_btn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -385,8 +373,7 @@
         private System.Windows.Forms.RadioButton rbDraw;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button color_btn;
-        private System.Windows.Forms.TextBox tb_linewidth;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbWidthLine;
     }
 }
 

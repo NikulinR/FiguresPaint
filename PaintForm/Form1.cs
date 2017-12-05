@@ -20,7 +20,7 @@ namespace PaintForm
            // color_btn.Click += color_btn_Click;
             // colorDialog1.FullOpen = true;
             bmptemp = new Bitmap(pictureBox1.Size.Width, pictureBox1.Size.Height);
-            draw = new BL.FDrawing(bmp);
+            draw = new BL.Decorator(bmp);
         }
 
         BL.FigureFactory RF= new BL.RectFactory();
@@ -29,8 +29,9 @@ namespace PaintForm
 
         int figid;
         
-        BL.FDrawing draw;
+        BL.Decorator draw;
 
+        Color fillcolor = Color.Empty;
         Color color;
 
         Invoker invoker = new Invoker();    // мультипульт
@@ -52,25 +53,26 @@ namespace PaintForm
             if (rbDel.Checked)
             {
                 invoker.PressButton(new CommandDelete(pic, e.Location.X, e.Location.Y));
-                draw.FDraw(pic, ref bmp);
+                draw.fd.FDraw(pic, ref bmp);
                 pictureBox1.Image = bmp;
             }
             //
-            else if (rbMove.Checked)
+            if (rbMove.Checked)
             {
-                chosen = pic.Choose(e.Location.X, e.Location.Y);
+
+                chosen = Picture.Choose(e.Location.X, e.Location.Y,pic);
                 if (chosen != null)
                 chosen.FColor = Color.White;
-                draw.FDraw(pic, ref bmp);
+                draw.fd.FDraw(pic, ref bmp);
             }
-             else if (rbCopy.Checked)
-                copied = pic.Choose(e.Location.X, e.Location.Y);
+                if (rbCopy.Checked)
+                copied = chosen.Clone();
             ///////////////////////////////////////////////////
                   if(color.Name == "0")
                      color = Color.Black;
 
             //////////////COLORS//////////////
-           /* if (rbBlack.Checked)
+           if (rbBlack.Checked)
                 color = Color.Black;
             if (rbRed.Checked)
                 color = Color.Red;
@@ -85,7 +87,7 @@ namespace PaintForm
             if (rbIndigo.Checked)
                 color = Color.Indigo;
             if (rbViolet.Checked)
-                color = Color.Violet;*/
+                color = Color.Violet;
             ///////////////////////////////////////////////////////
 
 
@@ -110,21 +112,23 @@ namespace PaintForm
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {            
             clicked = false;
+
             float linewidth;
-            if (float.TryParse(tb_linewidth.Text, out float l))
-                linewidth = l;
-            else linewidth = 2;
+            if (!float.TryParse(tbWidthLine.Text, out linewidth))
+                linewidth = 2;
+
+
             if (rbDraw.Checked)
             {
-                
+                invoker.PressButton(new CommandDraw(pic));
                 if (figid == 1)
-                    RF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, linewidth, ref pic);
+                    RF.CreateFigure(begin.X, begin.Y, color, fillcolor, ydist, xdist, linewidth, ref pic);
                 else if (figid == 2)
-                    OF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, linewidth, ref pic);
+                    OF.CreateFigure(begin.X, begin.Y, color, fillcolor, ydist, xdist, linewidth, ref pic);
                 else if (figid == 3)
-                    LF.CreateFigure(begin.X, begin.Y, color, ydist, xdist, linewidth, ref pic);
+                    LF.CreateFigure(begin.X, begin.Y, color, fillcolor, ydist, xdist, linewidth, ref pic);
 
-                draw.FDraw(pic, ref bmp);
+                draw.fd.FDraw(pic, ref bmp);
                 pictureBox1.Image = bmp;
                 bmptemp = bmp;
             }
@@ -132,7 +136,7 @@ namespace PaintForm
             {
                 chosen.FColor = color;
                 invoker.PressButton(new CommandMove(pic, chosen, e.Location.X, e.Location.Y));
-                draw.FDraw(pic, ref bmp);
+                draw.fd.FDraw(pic, ref bmp);
                 pictureBox1.Image = bmp;
                 bmptemp = bmp;
             }
@@ -151,6 +155,7 @@ namespace PaintForm
             {                
                 bmptemp = (Bitmap)bmp.Clone();                
                 draw.FDrawMove(chosen.Type, e.Location.X, e.Location.Y, chosen.Width, chosen.Height, ref bmptemp);
+
                 pictureBox1.Image = bmptemp;
             }            
         }
@@ -158,21 +163,21 @@ namespace PaintForm
         private void btnBack_Click_1(object sender, EventArgs e)
         {
             invoker.PressUndoButton();
-            draw.FDraw(pic, ref bmp);
+            draw.fd.FDraw(pic, ref bmp);
             pictureBox1.Image = bmp;
         }
 
         private void btnForward_Click_1(object sender, EventArgs e)
         {
             invoker.PressButton(new CommandStep(pic));
-            draw.FDraw(pic, ref bmp);
+            draw.fd.FDraw(pic, ref bmp);
             pictureBox1.Image = bmp;
         }
 
         private void color_btn_Click(object sender, EventArgs e)
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
-                color = colorDialog1.Color;
+                fillcolor = colorDialog1.Color;
          //   else color = Color.Black;
         }
 

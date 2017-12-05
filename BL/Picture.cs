@@ -10,15 +10,14 @@ namespace BL
     {
         public List<Figure> Figures = new List<Figure>();
         Stack<Figure> Deletes = new Stack<Figure>();
+        Stack<Figure> Removed = new Stack<Figure>();
 
-        
-
-        public Figure Choose(int x, int y)
+        static public Figure Choose(int x, int y, Picture pic)
         {
             Figure chosen = null;
             bool found = false;
             if(!found)
-            foreach (var item in Figures)
+            foreach (var item in pic.Figures)
             {
                 if (item.Width > 0 && item.Height > 0)
                     if ((item.X < x && x < item.X + item.Width) && (item.Y < y && y < item.Y + item.Height))
@@ -49,18 +48,25 @@ namespace BL
                         break;
                     }
             }
+            if (found)
+            chosen.Chosed = true;
             return chosen;
         }
 
-        public void Delete(int x, int y)
+        public void Delete(int x, int y, Picture pic)
         {
-            Figures.Remove(Choose(x, y));
+            Deletes.Push(Choose(x, y, pic));
+            Figures.Remove(Choose(x, y,pic));            
         }
 
         public void Move(Figure chosen, int xd, int yd)
         {
+            Removed.Push(chosen.Clone());
+            Figures.Remove(chosen);
+            Deletes.Push(chosen);
             chosen.X = xd;
             chosen.Y = yd;
+            Figures.Add(chosen);
         }
 
         public Figure Copy(Figure fg)
@@ -74,6 +80,7 @@ namespace BL
             for (int i = 0; i < count; i++)
                 Figures.Add(Deletes.Pop());
         }
+
         public void Return()
         {
             if (Figures.Count > 0)
@@ -82,9 +89,19 @@ namespace BL
                 Figures.RemoveAt(Figures.Count - 1);
             }
         }
+
+        public void ReturnRemoved()
+        {
+            if (Figures.Count > 0 && Removed.Count>0)
+            {
+                Figures.RemoveAt(Figures.Count - 1);
+                Figures.Add(Removed.Pop());
+            }
+        }
+
         public void Forward()
         {
-            if (Deletes.Count > 0)
+            if (Deletes.Count > 0 )
                 Figures.Add(Deletes.Pop());
         }
     }
@@ -106,11 +123,11 @@ namespace BL
         }
         public void Execute()
         {
-            picture.Delete(X, Y);
+            picture.Delete(X, Y,picture);
         }
         public void Undo()
         {
-            picture.Return();
+            picture.Forward();
         }
     }
 
@@ -130,6 +147,23 @@ namespace BL
         public void Execute()
         {
             picture.Move(fig, X, Y);
+        }
+        public void Undo()
+        {
+            picture.ReturnRemoved();
+        }
+    }
+
+    public class CommandDraw : ICommand
+    {
+        Picture picture;
+        public CommandDraw(Picture pic)
+        {
+            picture = pic;
+        }
+        public void Execute()
+        {
+            
         }
         public void Undo()
         {
@@ -188,6 +222,7 @@ namespace BL
                 commandhistory.Pop().Undo();
             }
         }
+        
     }
 
 
